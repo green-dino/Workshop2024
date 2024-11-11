@@ -1,0 +1,28 @@
+site_name: Workshop 
+site_description: "An outline for workshop"
+site_author: "Rye"
+
+
+theme:
+  name: material  # Using the MkDocs Material theme
+  features:
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - instant
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+
+markdown_extensions:
+  - toc:  # Table of Contents generation
+      permalink: true
+  - footnotes  # Support for footnotes in Markdown
+  - admonition  # Support for tips, warnings, and notes
+  - codehilite:  # Syntax highlighting for code blocks
+      guess_lang: false
+  - pymdownx.superfences  # Advanced code block rendering
+
+
