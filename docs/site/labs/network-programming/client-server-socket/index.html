@@ -620,7 +620,7 @@
         
   
   <span class="md-ellipsis">
-    test
+    lab
   </span>
   
 
@@ -1143,7 +1143,23 @@
 
   <h1>Client server socket</h1>
 
+<pre class="mermaid"><code>stateDiagram
+    [*] --&gt; ServerIdle
+    [*] --&gt; ClientIdle
 
+    ServerIdle --&gt; AcceptingConnections: Start Server
+    AcceptingConnections --&gt; WaitingForClient: Accept Client Connection
+    WaitingForClient --&gt; ProcessingRequest: Receive Client Message
+    ProcessingRequest --&gt; SendingResponse: Process and Display Message
+    SendingResponse --&gt; ServerIdle: Send Response to Client
+
+    ClientIdle --&gt; SendingRequest: Start Client
+    SendingRequest --&gt; WaitingForResponse: Send Message to Server
+    WaitingForResponse --&gt; ProcessingResponse: Receive Server Response
+    ProcessingResponse --&gt; ClientIdle: Display Server Response
+
+    ProcessingRequest --&gt; ServerIdle: Invalid Integer Received
+    ProcessingResponse --&gt; ClientIdle: Invalid Integer Sent</code></pre>
 
 
 
