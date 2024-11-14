@@ -24,7 +24,7 @@
     
     
       
-        <title>test - Workshop</title>
+        <title>lab - Workshop</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test" class="md-skip">
+        <a href="#lab" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              test
+              lab
             
           </span>
         </div>
@@ -626,7 +626,7 @@
         
   
   <span class="md-ellipsis">
-    test
+    lab
   </span>
   
 
@@ -1148,8 +1148,33 @@
                   
 
 
-<h1 id="test">test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h1>
-<p>things and stuff</p>
+<h1 id="lab">lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h1>
+<pre class="mermaid"><code>stateDiagram
+    [*] --&gt; Start
+    Start --&gt; CreateSocket: Create Socket and Connect to Mail Server
+    CreateSocket --&gt; SendHELO: Send HELO Command
+    SendHELO --&gt; ReceiveHELOResponse: Receive HELO Response
+    ReceiveHELOResponse --&gt; CheckHELOResponse: Check HELO Response
+    CheckHELOResponse --&gt; SendMAILFROM: Send MAIL FROM Command
+    SendMAILFROM --&gt; ReceiveMAILFROMResponse: Receive MAIL FROM Response
+    ReceiveMAILFROMResponse --&gt; CheckMAILFROMResponse: Check MAIL FROM Response
+    CheckMAILFROMResponse --&gt; SendRCPTTO: Send RCPT TO Command
+    SendRCPTTO --&gt; ReceiveRCPTTOResponse: Receive RCPT TO Response
+    ReceiveRCPTTOResponse --&gt; CheckRCPTTOResponse: Check RCPT TO Response
+    CheckRCPTTOResponse --&gt; SendDATA: Send DATA Command
+    SendDATA --&gt; ReceiveDATAResponse: Receive DATA Response
+    ReceiveDATAResponse --&gt; CheckDATAResponse: Check DATA Response
+    CheckDATAResponse --&gt; SendMessage: Send Message Data
+    SendMessage --&gt; EndMessage: End Message with Single Period
+    EndMessage --&gt; SendQUIT: Send QUIT Command
+    SendQUIT --&gt; ReceiveQUITResponse: Receive QUIT Response
+    ReceiveQUITResponse --&gt; CloseConnection: Close Connection
+    CloseConnection --&gt; [*]
+
+    CheckHELOResponse --&gt; [*]: 220 Reply Not Received
+    CheckMAILFROMResponse --&gt; [*]: 250 Reply Not Received
+    CheckRCPTTOResponse --&gt; [*]: 250 Reply Not Received
+    CheckDATAResponse --&gt; [*]: 354 Reply Not Received</code></pre>
 
 
 
