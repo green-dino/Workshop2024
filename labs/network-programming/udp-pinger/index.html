@@ -24,7 +24,7 @@
     
     
       
-        <title>Udp pinger - Workshop</title>
+        <title>UDP Ping lab - Workshop</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#udp-ping-lab" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -105,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Udp pinger
+              UDP Ping lab
             
           </span>
         </div>
@@ -635,12 +640,14 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Udp pinger
+    UDP Ping lab
   </span>
   
 
@@ -1141,9 +1148,68 @@
                   
 
 
-  <h1>Udp pinger</h1>
+<h1 id="udp-ping-lab">UDP Ping lab<a class="headerlink" href="#udp-ping-lab" title="Permanent link">&para;</a></h1>
+<pre class="mermaid"><code>stateDiagram
+    [*] --&gt; Start
+    Start --&gt; CreateSocket: Create UDP Socket
+    CreateSocket --&gt; BindSocket: Bind Socket to IP and Port
+    BindSocket --&gt; Listening: Start Listening for Incoming Packets
 
+    Listening --&gt; ReceivePacket: Receive Packet from Client
+    ReceivePacket --&gt; GenerateRandom: Generate Random Number (0-10)
+    GenerateRandom --&gt; CheckRandom: Check if Random Number &lt; 4
 
+    CheckRandom --&gt; PacketLost: Packet Considered Lost
+    PacketLost --&gt; Listening: Continue Listening
+
+    CheckRandom --&gt; ProcessPacket: Random Number &gt;= 4
+    ProcessPacket --&gt; CapitalizeMessage: Capitalize Client Message
+    CapitalizeMessage --&gt; SendResponse: Send Response to Client
+    SendResponse --&gt; Listening: Continue Listening</code></pre>
+<h1 id="client-code">Client Code<a class="headerlink" href="#client-code" title="Permanent link">&para;</a></h1>
+<p><pre class="mermaid"><code>stateDiagram
+    [*] --&gt; Start
+    Start --&gt; CreateSocket: Create UDP Socket
+    CreateSocket --&gt; SetTimeout: Set Socket Timeout to 1 Second
+    SetTimeout --&gt; SendPing: Send Ping Message to Server
+    SendPing --&gt; WaitForResponse: Wait for Server Response
+
+    WaitForResponse --&gt; ReceiveResponse: Response Received
+    ReceiveResponse --&gt; CalculateRTT: Calculate Round Trip Time (RTT)
+    CalculateRTT --&gt; PrintResponse: Print Response Message and RTT
+    PrintResponse --&gt; CheckPingCount: Check if 10 Pings Sent
+
+    WaitForResponse --&gt; Timeout: No Response within 1 Second
+    Timeout --&gt; PrintTimeout: Print "Request Timed Out"
+    PrintTimeout --&gt; CheckPingCount: Check if 10 Pings Sent
+
+    CheckPingCount --&gt; SendPing: Less than 10 Pings Sent
+    CheckPingCount --&gt; CloseSocket: 10 Pings Sent
+    CloseSocket --&gt; [*]</code></pre>
+Requirements</p>
+<pre class="mermaid"><code>classDiagram
+    class PingMessage {
+        +int sequence_number
+        +Date time
+        +String formatMessage()
+    }
+
+    class Client {
+        +int currentSequence
+        +Date sendTime
+        +PingMessage createPingMessage()
+        +void sendPing()
+    }
+
+    class Server {
+        +void receivePing(PingMessage message)
+        +void processPing(PingMessage message)
+        +void sendResponse(PingMessage message)
+    }
+
+    PingMessage "1" --&gt; "1" Client : created by
+    Client "1" --&gt; "1" Server : sends ping to
+    Server "1" --&gt; "1" PingMessage : processes</code></pre>
 
 
 
