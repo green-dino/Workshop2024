@@ -1,0 +1,2 @@
+
+<a href="mailto:rye@wentcloud.com?subject=Community%20Support%20Inquiry&body=Hello%20Rye%,%0D%0A%0D%0AI%20am%20writing%20to%20inquire%20about%20community%20support.%20Here%20are%20the%20details%20of%20my%20issue:%0D%0A%0D%0A%5BPlease%20describe%20your%20issue%20here%5D%0D%0A%0D%0AThank%20you%20for%20your%20assistance.%0D%0A%0D%0ABest%20regards,%0D%0A%5BYour%20Name%5D%0D%0A%5BYour%20Contact%20Information%5D">Contact Support</a>
