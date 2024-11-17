@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduction-to-material-and-design-considerations" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -395,7 +400,7 @@
         
   
   <span class="md-ellipsis">
-    Getting started
+    Getting Started Guide
   </span>
   
 
@@ -418,6 +423,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -428,6 +446,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structured-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structured Programming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stratified-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stratified Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-oriented-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object-Oriented Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reusability-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reusability Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reusability Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-control-abstractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Control Abstractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-interface-abstractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Interface Abstractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-syntactic-abstractions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Syntactic Abstractions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-packages-and-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Packages and Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-whole-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Whole Languages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1084,7 +1244,7 @@
         
   
   <span class="md-ellipsis">
-    Community support
+    Community Support
   </span>
   
 
@@ -1137,10 +1297,155 @@
                   
 
 
-  <h1>Introduction</h1>
-
 <p>This workshop is focused on the fundamentals of network design and offers
 applied application of learning through functional design considerations exploring protocols. </p>
+<h1 id="introduction-to-material-and-design-considerations">Introduction to Material and Design Considerations<a class="headerlink" href="#introduction-to-material-and-design-considerations" title="Permanent link">&para;</a></h1>
+<p>In software engineering, various design methodologies are employed to create robust, maintainable, and reusable code. Here, we discuss three key design paradigms—<strong>Structured Programming</strong>, <strong>Stratified Design</strong>, and <strong>Object-Oriented Design</strong>—along with the elements you should aim to reuse in your code.</p>
+<h2 id="structured-programming">Structured Programming<a class="headerlink" href="#structured-programming" title="Permanent link">&para;</a></h2>
+<p>Structured Programming encourages the creation of modules that meet specific specifications and can be reused within the bounds of those specifications.<br />
+- <strong>Key principles</strong>:<br />
+  - Emphasizes clear, linear flow of control.<br />
+  - Utilizes <strong>subroutines</strong>, <strong>loops</strong>, and <strong>conditionals</strong> to create well-defined program structures.<br />
+- <strong>Goal</strong>: Simplify the development process and enhance code readability.</p>
+<pre class="mermaid"><code>erDiagram
+    STRUCTURED_PROGRAMMING {
+        string id PK
+        string name
+    }
+
+    KEY_PRINCIPLES {
+        string id PK
+        string principle
+    }
+
+    GOAL {
+        string id PK
+        string description
+    }
+
+    STRUCTURED_PROGRAMMING ||--o{ KEY_PRINCIPLES : follows
+    STRUCTURED_PROGRAMMING ||--o{ GOAL : aims_to</code></pre>
+<blockquote>
+<p><strong>Note</strong>: Use this approach for simpler systems with a focus on clear program logic.</p>
+</blockquote>
+<hr />
+<h2 id="stratified-design">Stratified Design<a class="headerlink" href="#stratified-design" title="Permanent link">&para;</a></h2>
+<p>Stratified Design builds on the principles of Structured Programming by encouraging the development of modules with commonly needed functionality.<br />
+- <strong>Key principles</strong>:<br />
+  - Promotes <strong>modularity</strong> and <strong>separation of concerns</strong>.<br />
+  - Encourages modules that are adaptable to specification changes or reusable in different programs.<br />
+- <strong>Benefits</strong>:<br />
+  - Easier to adapt and extend software.<br />
+  - Reduces duplication of effort.</p>
+<blockquote>
+<p><strong>Annotation</strong>: Stratified Design is ideal for systems requiring flexibility and frequent updates.</p>
+</blockquote>
+<hr />
+<h2 id="object-oriented-design">Object-Oriented Design<a class="headerlink" href="#object-oriented-design" title="Permanent link">&para;</a></h2>
+<p>Object-Oriented Design (OOD) is a form of stratified design that focuses on <strong>classes of objects</strong> and <strong>information hiding</strong>.<br />
+- <strong>Key principles</strong>:<br />
+  - Encapsulation of data and behavior within objects.<br />
+  - Reusability through inheritance and polymorphism.<br />
+- <strong>Benefits</strong>:<br />
+  - Enhances maintainability and modularity.<br />
+  - Simplifies the creation and management of complex systems.  </p>
+<blockquote>
+<p><strong>Example</strong>: Use OOD to design applications with interconnected components, such as a customer management system.</p>
+</blockquote>
+<hr />
+<h2 id="reusability-considerations">Reusability Considerations<a class="headerlink" href="#reusability-considerations" title="Permanent link">&para;</a></h2>
+<p>To maximize <strong>reusability</strong> in your code, aim to reuse the following elements:</p>
+<h3 id="1-data-types">1. <strong>Data Types</strong><a class="headerlink" href="#1-data-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Define and reuse <strong>custom data types</strong> to ensure consistency and reduce redundancy.</li>
+</ul>
+<pre class="mermaid"><code>classDiagram
+    class DataType {
+        +name: String
+        +type: String
+        +defaultValue: Any
+    }
+
+    class CustomDataType {
+        +customField1: String
+        +customField2: Integer
+    }
+
+    DataType &lt;|-- CustomDataType</code></pre>
+<h3 id="2-functions">2. <strong>Functions</strong><a class="headerlink" href="#2-functions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create reusable <strong>functions</strong> that perform specific tasks and can be called from different parts of the program.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A[Start] --&gt; B[Define Function]
+    B --&gt; C[Call Function]
+    C --&gt; D[Perform Task]
+    D --&gt; E[End]</code></pre>
+<h3 id="3-classes">3. <strong>Classes</strong><a class="headerlink" href="#3-classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Design <strong>classes</strong> that encapsulate data and behavior, promoting reuse and modularity.</li>
+</ul>
+<pre class="mermaid"><code>classDiagram
+    class Class {
+        +attribute1: Type
+        +attribute2: Type
+        +method1(): void
+        +method2(): void
+    }</code></pre>
+<h3 id="4-methods">4. <strong>Methods</strong><a class="headerlink" href="#4-methods" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implement <strong>methods</strong> within classes that can be reused across different instances and contexts.</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Class
+    Client-&gt;&gt;Class: call method1()
+    Class--&gt;&gt;Client: return result</code></pre>
+<h3 id="5-control-abstractions">5. <strong>Control Abstractions</strong><a class="headerlink" href="#5-control-abstractions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use control structures like <strong>loops</strong> and <strong>conditionals</strong> to create reusable patterns of execution.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A[Start] --&gt; B{Condition?}
+    B --&gt;|True| C[Execute Loop]
+    B --&gt;|False| D[End]
+    C --&gt; B</code></pre>
+<h3 id="6-interface-abstractions">6. <strong>Interface Abstractions</strong><a class="headerlink" href="#6-interface-abstractions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Define clear <strong>interfaces</strong> for modules and classes to promote interoperability and reuse.</li>
+</ul>
+<pre class="mermaid"><code>classDiagram
+    class Interface {
+        +method1(): void
+        +method2(): void
+    }
+
+    class Implementation {
+        +method1(): void
+        +method2(): void
+    }
+
+    Interface &lt;|-- Implementation</code></pre>
+<h3 id="7-syntactic-abstractions">7. <strong>Syntactic Abstractions</strong><a class="headerlink" href="#7-syntactic-abstractions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utilize <strong>macros</strong> and other syntactic constructs to create reusable code snippets.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A[Start] --&gt; B[Define Macro]
+    B --&gt; C[Use Macro]
+    C --&gt; D[Expand Macro]
+    D --&gt; E[End]</code></pre>
+<h3 id="8-packages-and-modules">8. <strong>Packages and Modules</strong><a class="headerlink" href="#8-packages-and-modules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Organize related functionality into <strong>packages</strong> and <strong>modules</strong> to promote reuse and maintainability.</li>
+</ul>
+<h3 id="9-whole-languages">9. <strong>Whole Languages</strong><a class="headerlink" href="#9-whole-languages" title="Permanent link">&para;</a></h3>
+<ul>
+<li>In some cases, entire <strong>domain-specific languages</strong> can be created to facilitate reuse across different projects.</li>
+</ul>
+<blockquote>
+<p><strong>Tip</strong>: Consistently applying these principles ensures long-term scalability and efficiency in software development.</p>
+</blockquote>
 
 
 
@@ -1176,7 +1481,7 @@ applied application of learning through functional design considerations explori
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting started">
+          <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1186,7 +1491,7 @@ applied application of learning through functional design considerations explori
                 Previous
               </span>
               <div class="md-ellipsis">
-                Getting started
+                Getting Started Guide
               </div>
             </div>
           </a>
